@@ -53,13 +53,13 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_alignTop="@+id/formLogo"
         android:layout_marginTop="25dp"
         android:src="@drawable/password_box"
-        android:id="@+id/imageView" />
+        android:id="@+id/usernameBox" />
 
     <ImageView
         android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_alignStart="@+id/usernameBox"
+        android:layout_alignTop="@+id/usernameBox"
         android:layout_marginTop="85dp"
         android:src="@drawable/password_box"
         android:id="@+id/passwordBox" />
@@ -67,8 +67,8 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
     <ImageView
         android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_alignTop="@+id/imageView"
+        android:layout_alignStart="@+id/usernameBox"
+        android:layout_alignTop="@+id/usernameBox"
         android:layout_marginTop="182dp"
         android:src="@drawable/login_box"
         android:id="@+id/loginBox" />

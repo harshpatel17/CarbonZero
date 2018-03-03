@@ -2,40 +2,122 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/landingLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ryzen.ryan.carbonzero.LoginActivity">
 
+    <TextView
+        android:id="@+id/quoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/formBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/formLogo"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+
+
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/formTopBar"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/mlogo" />
+
+    <ImageView
+        android:id="@+id/formTopBar"
+        android:layout_width="300dp"
+        android:layout_height="5dp"
+        android:layout_alignBottom="@+id/quoteText"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/topbar" />
 
     <EditText
         android:id="@+id/loginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="62dp"
-        android:layout_marginTop="123dp"
+        android:layout_alignStart="@+id/usernameBox"
+        android:layout_alignTop="@+id/loginBox"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="USERNAME"
         android:inputType="textPersonName" />
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/formTopBar"
+        android:layout_alignTop="@+id/formLogo"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/password_box"
+        android:id="@+id/usernameBox" />
 
     <EditText
         android:id="@+id/pwText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/loginText"
-        android:layout_alignTop="@+id/loginText"
-        android:layout_marginTop="81dp"
+        android:layout_alignStart="@+id/usernameBox"
+        android:layout_below="@+id/loginText"
         android:ems="10"
         android:hint="PASSWORD"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+/>
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/usernameBox"
+        android:layout_alignTop="@+id/usernameBox"
+        android:layout_marginTop="85dp"
+        android:src="@drawable/password_box"
+        android:id="@+id/passwordBox" />
 
     <Button
         android:id="@+id/signIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="34dp"
         android:layout_below="@+id/pwText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="31dp"
+        android:background="@null"
         android:text="Sign In" />
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_alignStart="@+id/usernameBox"
+        android:layout_alignTop="@+id/usernameBox"
+        android:layout_marginTop="182dp"
+        android:src="@drawable/login_box"
+        android:id="@+id/loginBox" />
+
+
+
 </RelativeLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="com.ryzen.ryan.carbonzero.LoginActivity">-->
+
+
+
+
+
+
+
+<!--</RelativeLayout>-->

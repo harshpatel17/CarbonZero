@@ -2,6 +2,7 @@ package com.ryzen.ryan.carbonzero;
 
 import android.content.Intent;
 import android.provider.ContactsContract;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,20 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseReference loginRef;
     DatabaseReference users;
 
-    List<UserData> userDataList;
-
+    String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // Hides action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        // Hides status bar
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
         loginRef = firebaseDatabase.getReference();
         users = loginRef.child("users");
@@ -43,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         pwText = findViewById(R.id.pwText);
         signIn = findViewById(R.id.signIn);
 
-        userDataList = new ArrayList<>();
 
 
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
 //                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
 
 
-                String id = loginText.getText().toString();
+                id = loginText.getText().toString();
                 users.child(id).setValue(new UserData(loginText.getText().toString()));
 //                if(tryLogin("","")) {
 //                    Intent intent = new Intent(LoginActivity.this, EarthActivity.class);
@@ -74,9 +82,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(signInClicked) {
                     for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
                         UserData userData = userSnapshot.getValue(UserData.class);
+                        Toast.makeText(LoginActivity.this, "IT EXISTS!!! " + id, Toast.LENGTH_SHORT).show();
 
-                        if(userData.getEmailID().equals("hayho"))
-                            Toast.makeText(LoginActivity.this, "IT EXISTS!!! ", Toast.LENGTH_SHORT).show();
+                        if(userData.getEmailID().equals(id)){}
                     }
                 }
             }

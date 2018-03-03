@@ -43,7 +43,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_height="6dp"
         android:layout_alignBottom="@+id/quoteText"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="2dp"
         android:scaleType="centerCrop"
         android:src="@drawable/topbar" />
 

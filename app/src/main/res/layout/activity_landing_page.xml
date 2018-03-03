@@ -35,7 +35,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_alignParentStart="true"
         android:layout_below="@+id/formTopBar"
         android:layout_marginTop="150dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/mlogo" />
 
     <ImageView
         android:id="@+id/formTopBar"
@@ -45,7 +45,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="3dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/topbar4" />
+        android:src="@drawable/topbar" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -54,7 +54,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_alignParentTop="true"
         android:layout_marginTop="230dp"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/boxone" />
+        android:src="@drawable/password_box" />
 
     <ImageView
         android:layout_width="320dp"
@@ -62,7 +62,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_alignStart="@+id/imageView"
         android:layout_alignTop="@+id/imageView"
         android:layout_marginTop="87dp"
-        android:src="@drawable/boxone"
+        android:src="@drawable/password_box"
         android:id="@+id/passwordBox" />
 
     <ImageView
@@ -71,7 +71,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_alignStart="@+id/imageView"
         android:layout_alignTop="@+id/imageView"
         android:layout_marginTop="192dp"
-        android:src="@drawable/yellowbox"
+        android:src="@drawable/login_box"
         android:id="@+id/loginBox" />
 
 

@@ -37,20 +37,14 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
         new getAPI().execute(quoteAPI);
 
-        // Hides action bar
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
-
-        // Hides status bar
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-
         quoteText = findViewById(R.id.quoteText);
         landingLayout = findViewById(R.id.landingLayout);
 
         File dir = new File(path);
         dir.mkdir();
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
 
         landingLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +66,20 @@ public class LandingPage extends AppCompatActivity {
                 startActivity(loginIntent);
             }
         });
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 
     private void initialFile(File file) {

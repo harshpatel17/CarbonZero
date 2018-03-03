@@ -34,6 +34,7 @@ public class EarthActivity extends AppCompatActivity implements SensorEventListe
 
     // Firebase
     DatabaseReference pedometerRef;
+    DatabaseReference dailyRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class EarthActivity extends AppCompatActivity implements SensorEventListe
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         pedometerRef = database.getReference("pedometer");
+        dailyRef = database.getReference("daily");
     }
 
     // Wheel data loaded
@@ -95,7 +97,7 @@ public class EarthActivity extends AppCompatActivity implements SensorEventListe
     public void onSensorChanged(SensorEvent sensorEvent) {
             pedometerText.setText(String.valueOf(sensorEvent.values[0]));
             pedometerRef.setValue(String.valueOf(sensorEvent.values[0]));
-
+            dailyRef.setValue(new DailyData(0,150));
     }
     // Pedometer
     @Override

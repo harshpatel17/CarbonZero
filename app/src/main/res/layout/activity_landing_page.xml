@@ -24,7 +24,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/background2" />
+        android:src="@drawable/background" />
 
     <ImageView
         android:id="@+id/formLogo"

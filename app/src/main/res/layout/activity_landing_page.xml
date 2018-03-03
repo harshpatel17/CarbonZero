@@ -37,14 +37,26 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
 
     <ImageView
         android:id="@+id/formTopBar"
-        android:layout_width="400"
-        android:layout_height="7"
-        android:layout_margin="10"
+        android:layout_width="400dp"
+        android:layout_height="7dp"
+        android:layout_margin="10dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:scaleType="centerCrop"
         android:src="@drawable/topbar" />
+
+    <ImageView
+        android:id="@+id/formStart"
+        android:layout_width="130dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/formLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/starthere" />
+
+
+
 
 
 

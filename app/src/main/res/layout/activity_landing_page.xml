@@ -31,8 +31,8 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
 
 
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="201dp"
+        android:layout_below="@+id/formTopBar"
+        android:layout_marginTop="186dp"
         android:src="@drawable/mlogo" />
 
     <ImageView
@@ -52,7 +52,7 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:layout_height="match_parent"
         android:layout_below="@+id/formLogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="166dp"
         android:src="@drawable/starthere" />
 
 

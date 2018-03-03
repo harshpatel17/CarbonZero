@@ -39,37 +39,38 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
 
     <ImageView
         android:id="@+id/formTopBar"
-        android:layout_width="300dp"
-        android:layout_height="5dp"
+        android:layout_width="330dp"
+        android:layout_height="6dp"
         android:layout_alignBottom="@+id/quoteText"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp"
         android:scaleType="centerCrop"
         android:src="@drawable/topbar" />
 
     <ImageView
-        android:layout_width="300dp"
+        android:id="@+id/imageView"
+        android:layout_width="320dp"
         android:layout_height="match_parent"
-        android:layout_alignStart="@+id/formTopBar"
-        android:layout_alignTop="@+id/formLogo"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/password_box"
-        android:id="@+id/usernameBox" />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="230dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/password_box" />
 
     <ImageView
-        android:layout_width="300dp"
+        android:layout_width="320dp"
         android:layout_height="match_parent"
-        android:layout_alignStart="@+id/usernameBox"
-        android:layout_alignTop="@+id/usernameBox"
-        android:layout_marginTop="85dp"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginTop="87dp"
         android:src="@drawable/password_box"
         android:id="@+id/passwordBox" />
 
     <ImageView
-        android:layout_width="300dp"
+        android:layout_width="320dp"
         android:layout_height="match_parent"
-        android:layout_alignStart="@+id/usernameBox"
-        android:layout_alignTop="@+id/usernameBox"
-        android:layout_marginTop="182dp"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginTop="192dp"
         android:src="@drawable/login_box"
         android:id="@+id/loginBox" />
 

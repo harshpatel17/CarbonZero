@@ -29,6 +29,7 @@ dependencies {
 
     // Cursor Wheel Layout
     compile 'github.hellocsl:CursorWheelLayout:1.1.0'
+
 }
 
 

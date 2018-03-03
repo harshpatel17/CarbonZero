@@ -45,6 +45,11 @@ public class EarthActivity extends AppCompatActivity implements SensorEventListe
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
+        // Hides status bar
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         // Sets up pedometer sensor
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         pedometerText = findViewById(R.id.pedometerText);
@@ -97,7 +102,10 @@ public class EarthActivity extends AppCompatActivity implements SensorEventListe
     public void onSensorChanged(SensorEvent sensorEvent) {
             pedometerText.setText(String.valueOf(sensorEvent.values[0]));
             pedometerRef.setValue(String.valueOf(sensorEvent.values[0]));
-            dailyRef.setValue(new DailyData(0,150));
+            String key = dailyRef.push().getKey();
+            dailyRef.setValue(new DailyData(0,150, (int)sensorEvent.values[0]));
+            dailyRef.child("Victor").setValue("setting custom key when pushing new data to firebase database");
+
     }
     // Pedometer
     @Override

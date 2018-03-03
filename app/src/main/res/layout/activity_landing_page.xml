@@ -5,6 +5,7 @@
     android:id="@+id/landingLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/landing_page_bg"
     tools:context="com.ryzen.ryan.carbonzero.LandingPage">
 
     <TextView

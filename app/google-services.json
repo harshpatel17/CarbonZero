@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "239710375004",
+    "firebase_url": "https://carbonzero-55c64.firebaseio.com",
+    "project_id": "carbonzero-55c64",
+    "storage_bucket": "carbonzero-55c64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:239710375004:android:e3d035c8688a129a",
+        "android_client_info": {
+          "package_name": "com.ryzen.ryan.carbonzero"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "239710375004-56gt2orupq58l7pm17u2ii168u9nf2dg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ryzen.ryan.carbonzero",
+            "certificate_hash": "ea923d4a268cef47f0cc9cf8a3877c9692f3e5e4"
+          }
+        },
+        {
+          "client_id": "239710375004-c855jstvdbagrfeiu27r3r6ljdme3q53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4ODkvL-A75Y3CwzancIP4D2sqxdlC5sQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "239710375004-c855jstvdbagrfeiu27r3r6ljdme3q53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

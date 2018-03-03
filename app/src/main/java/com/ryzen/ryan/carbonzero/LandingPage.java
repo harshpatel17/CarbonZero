@@ -37,8 +37,18 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
         new getAPI().execute(quoteAPI);
 
+        // Hide action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        View decorView = getWindow().getDecorView();
+        // Hide both the navigation bar and the status bar.
+        // SYSTEM_UI_FLAG_FULLSCREEN is only available on Android 4.1 and higher, but as
+        // a general rule, you should design your app to hide the status bar whenever you
+        // hide the navigation bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                | View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
         quoteText = findViewById(R.id.quoteText);
         landingLayout = findViewById(R.id.landingLayout);
@@ -49,25 +59,18 @@ public class LandingPage extends AppCompatActivity {
         landingLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                file = new File(path+"/prelim_data.txt");
-                if(file.isFile()) {
-                    initialFile(file);
-                }
-                String [] data = Load(file);
-                if (data[0].equals("false")){
-                    Toast.makeText(getApplicationContext(), "It is false!", Toast.LENGTH_SHORT).show();
-                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
-                    startActivity(questionIntent);
-                }else{
-                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
-                    startActivity(earthIntent);
-                }
-//                try{
+//                file = new File(path+"/prelim_data.txt");
+//                if(file.isFile()) {
+//                    initialFile(file);
+//                }
+//                String [] data = Load(file);
+//                if (data[0].equals("false")){
+//                    Toast.makeText(getApplicationContext(), "It is false!", Toast.LENGTH_SHORT).show();
 //                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
 //                    startActivity(questionIntent);
-//                }catch(Exception e){
-//                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
-//                    startActivity(earthIntent);
+//                }else {
+                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
+                    startActivity(earthIntent);
 //                }
             }
         });

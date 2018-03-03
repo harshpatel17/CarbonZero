@@ -37,8 +37,14 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
         new getAPI().execute(quoteAPI);
 
+        // Hides action bar
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
+
+        // Hides status bar
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
         quoteText = findViewById(R.id.quoteText);
         landingLayout = findViewById(R.id.landingLayout);
@@ -49,25 +55,18 @@ public class LandingPage extends AppCompatActivity {
         landingLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                file = new File(path+"/prelim_data.txt");
-                if(file.isFile()) {
-                    initialFile(file);
-                }
-                String [] data = Load(file);
-                if (data[0].equals("false")){
-                    Toast.makeText(getApplicationContext(), "It is false!", Toast.LENGTH_SHORT).show();
-                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
-                    startActivity(questionIntent);
-                }else{
-                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
-                    startActivity(earthIntent);
-                }
-//                try{
+//                file = new File(path+"/prelim_data.txt");
+//                if(file.isFile()) {
+//                    initialFile(file);
+//                }
+//                String [] data = Load(file);
+//                if (data[0].equals("false")){
+//                    Toast.makeText(getApplicationContext(), "It is false!", Toast.LENGTH_SHORT).show();
 //                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
 //                    startActivity(questionIntent);
-//                }catch(Exception e){
-//                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
-//                    startActivity(earthIntent);
+//                }else {
+                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
+                    startActivity(earthIntent);
 //                }
             }
         });

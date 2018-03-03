@@ -65,9 +65,11 @@ public class LandingPage extends AppCompatActivity {
 //                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
 //                    startActivity(questionIntent);
 //                }else {
-                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
-                    startActivity(earthIntent);
+//                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
+//                    startActivity(earthIntent);
 //                }
+                Intent loginIntent = new Intent(LandingPage.this, LoginActivity.class);
+                startActivity(loginIntent);
             }
         });
     }

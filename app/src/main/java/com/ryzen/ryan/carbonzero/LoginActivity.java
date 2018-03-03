@@ -15,6 +15,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class LoginActivity extends AppCompatActivity {
     EditText loginText;
     EditText pwText;
@@ -24,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference loginRef;
     DatabaseReference users;
+
+    List<UserData> userDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +43,18 @@ public class LoginActivity extends AppCompatActivity {
         pwText = findViewById(R.id.pwText);
         signIn = findViewById(R.id.signIn);
 
+        userDataList = new ArrayList<>();
+
+
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signInClicked = true;
-                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
-                users.push();
+//                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
 
+
+                String id = loginText.getText().toString();
+                users.child(id).setValue(new UserData(loginText.getText().toString()));
 //                if(tryLogin("","")) {
 //                    Intent intent = new Intent(LoginActivity.this, EarthActivity.class);
 //                    startActivity(intent);
@@ -52,19 +63,21 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    String key;
 
     @Override
     protected void onStart() {
         super.onStart();
-        loginRef.addValueEventListener(new ValueEventListener() {
+        users.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if(signInClicked) {
-                if(dataSnapshot.child(loginText.getText().toString()).exists()){
-                    Toast.makeText(LoginActivity.this, "IT EXISTS", Toast.LENGTH_SHORT).show();
-                }else{
-                    users.setValue(new UserData(loginText.getText().toString()));
-                }
+                    for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+                        UserData userData = userSnapshot.getValue(UserData.class);
+
+                        if(userData.getEmailID().equals("hayho"))
+                            Toast.makeText(LoginActivity.this, "IT EXISTS!!! ", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 

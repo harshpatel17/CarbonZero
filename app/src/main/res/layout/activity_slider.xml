@@ -42,16 +42,26 @@
         android:layout_below="@+id/wht"
         android:layout_marginTop="21dp"
         android:fontFamily="@font/aller"
-        android:text="Your vegatable to meat ration is:"
+        android:text="Your vegetable to meat ratio is:"
         android:textColor="#fff"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/currentCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:layout_alignStart="@+id/progressText"
+        android:layout_below="@+id/progressText"
+        android:fontFamily="@font/aller"
+        android:text="TextView" />
 
     <TextView
         android:id="@+id/newCP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/VeggieMeatBar"
-        android:layout_below="@+id/progressText"
+        android:layout_below="@+id/currentCP"
         android:fontFamily="@font/aller"
         android:text="New Total Carbon Points: "
         android:textColor="#fff"

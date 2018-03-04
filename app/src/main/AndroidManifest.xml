@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LandingPage">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,9 +28,7 @@
         <activity android:name=".Slider" />
         <activity android:name=".EarthActivity" />
         <activity android:name=".QuestionsActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
+
         <activity android:name=".QuestionOne" />
         <activity android:name=".QuestionTwo" />
         <activity android:name=".QuestionThree" />
@@ -38,7 +36,9 @@
         <activity android:name=".QuestionFive" />
         <activity android:name=".QuestionSix" />
         <activity android:name=".QuestionSeven" />
-        <activity android:name=".TotalCarbon"></activity>
+        <activity android:name=".TotalCarbon">
+        </activity>
+        <activity android:name=".whatiscarbon"/>
     </application>
 
 </manifest>

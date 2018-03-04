@@ -1,7 +1,9 @@
 package com.ryzen.ryan.carbonzero;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.transition.Slide;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,10 @@ public class SliderFragment extends Fragment {
     SeekBar seekBar;
     TextView progressText;
     TextView newCPText;
+    TextView currentCPText;
+
+    int currentCP;
+    int newCP;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +41,11 @@ public class SliderFragment extends Fragment {
 
         progressText = v.findViewById(R.id.progressText);
         newCPText = v.findViewById(R.id.newCP);
+        currentCPText = v.findViewById(R.id.currentCP);
+        currentCP = getArguments().getInt("totalCarbon");
+        currentCPText.setText("Your current carbon points are " + currentCP);
+
+        newCP = currentCP;
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -58,17 +69,26 @@ public class SliderFragment extends Fragment {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
 
+                int changeFactor = 0;
 
-                progressText.setText("Your vegatable to meat ratio is: " + progressChanged + "/" + progressOther);
+                progressText.setText("Your vegetable to meat ratio is: " + progressChanged + "/" + progressOther);
                 Toast.makeText(getContext(),"Bar Progress:" + progressChanged,Toast.LENGTH_SHORT).show();
-
+                if(progressChanged ==50){
+                    changeFactor = progressChanged/20;
+                }else if(progressChanged >50){
+                    changeFactor = (progressChanged/20)*(-1);
+                }else{
+                    changeFactor = progressChanged/20;
+                }
                 // veggieCP = (int)(progressChanged*0.01)*veggieCP;
                 //meatCP = (int)((progressOther*0.01)*meatCP);
 
 
-                int YY = newNew + (int)((progressChanged)*veggieCP) + (int)(progressOther*0.01)*meatCP;
-                newCPText.setText("New Total Carbon Points: " + (YY));
+//                int YY = newNew + (int)((progressChanged)*veggieCP) + (int)(progressOther*0.01)*meatCP;
+                int YY = currentCP + changeFactor;
+                newCP = YY;
 
+                newCPText.setText("New Total Carbon Points: " + (YY));
                 //  newCPText.setText("New Total Carbon Points: " + (newNew + (int)((progressChanged*0.01)*veggieCP) + (int)(progressOther*0.01)*meatCP)/-1);
             }
         });
@@ -76,9 +96,6 @@ public class SliderFragment extends Fragment {
 
     }
 
-
-
-
-    }
+}
 
 

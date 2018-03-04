@@ -12,8 +12,6 @@ import android.widget.TextView;
 public class QuestionSeven extends AppCompatActivity {
 
 
-    TextView test;
-
     Button choiceOne;
     Button choiceTwo;
     Button choiceThree;
@@ -34,11 +32,9 @@ public class QuestionSeven extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        test = findViewById(R.id.test);
 
         Intent intent = getIntent();
         final String q6 = intent.getStringExtra("qSix");
-        test.setText(q6);
 
         choiceOne = (Button) findViewById(R.id.choiceOne);
         choiceTwo = (Button) findViewById(R.id.choiceTwo);
@@ -95,5 +91,14 @@ public class QuestionSeven extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        choiceOne.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceTwo.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceThree.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceFour.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceFive.setBackgroundColor(Color.parseColor("#26ffffff"));
     }
 }

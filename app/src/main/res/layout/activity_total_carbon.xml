@@ -31,9 +31,9 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText"
-        android:layout_alignStart="@+id/earthBtn"
-        android:layout_marginBottom="9dp"
+        android:layout_above="@+id/startGoal"
+        android:layout_alignEnd="@+id/earthBtn"
+        android:layout_marginBottom="14dp"
         android:fontFamily="@font/antonio"
         android:text="Set your goal"
         android:textColor="#ede21b"
@@ -62,7 +62,7 @@
         android:text="Set" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/startGoal"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_above="@+id/earthBtn"

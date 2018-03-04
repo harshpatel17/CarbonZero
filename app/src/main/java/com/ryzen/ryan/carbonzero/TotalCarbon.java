@@ -1,12 +1,15 @@
 package com.ryzen.ryan.carbonzero;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Scanner;
 
@@ -26,7 +29,8 @@ public class TotalCarbon extends AppCompatActivity {
 
     Button toEarthBtn;
     TextView totalCP;
-
+    EditText startGoal;
+    int total;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,7 @@ public class TotalCarbon extends AppCompatActivity {
 
         toEarthBtn = findViewById(R.id.earthBtn);
         totalCP = findViewById(R.id.totalCP);
-
+        startGoal = findViewById(R.id.startGoal);
         Intent intent = getIntent();
         final String answers = intent.getStringExtra("qSeven");
 
@@ -57,16 +61,37 @@ public class TotalCarbon extends AppCompatActivity {
         q6 = Integer.parseInt(scanner.next());
         q7 = Integer.parseInt(scanner.next());
 
-        int total = getTotalCarbonPoints();
+        total = getTotalCarbonPoints();
         totalCP.setText(total+"");
 
         toEarthBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TotalCarbon.this, EarthActivity.class);
-                startActivity(intent);
+                int carbonGoal = Integer.parseInt(startGoal.getText().toString());
+                if(carbonGoal >= 1000 && carbonGoal <= total) {
+                    Intent intent = new Intent(TotalCarbon.this, EarthActivity.class)
+                            .putExtra("startGoal", startGoal.getText().toString())
+                            .putExtra("startTotal", total);
+                    startActivity(intent);
+                    toEarthBtn.setBackgroundColor(Color.parseColor("#ede21b"));
+                }else if (carbonGoal >= total){
+                    Toast.makeText(getApplicationContext(), "Please enter a number greater than your total", Toast.LENGTH_SHORT).show();
+
+                }else if(carbonGoal >= 5000){
+                    Toast.makeText(getApplicationContext(), "Please enter a number less than 5000", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Please enter a number greater than 1000", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+//    17.71
+    // 20
+    @Override
+    protected void onPause() {
+        super.onPause();
+        toEarthBtn.setBackgroundColor(Color.parseColor("#26ffffff"));
     }
 
     public double calculateFuel(int q1) {
@@ -243,7 +268,7 @@ public class TotalCarbon extends AppCompatActivity {
     public int getTotalCarbonPoints() {
 
         //call getTotalCarbonPoints when submitting results
-        double total = calculateFuel(q1)+ calculateElectricity(q2)+ calculateNG(q3)+ calculateRecycle(q4)+calculateMeat(q6)+calculateVeggies(q7);
+        double total = (calculateFuel(q1)+ calculateElectricity(q2)+ calculateNG(q3)+ calculateRecycle(q4)+calculateMeat(q6)+calculateVeggies(q7))/12*167;
 
 
 

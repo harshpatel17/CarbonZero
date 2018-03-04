@@ -1,6 +1,7 @@
 package com.ryzen.ryan.carbonzero;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.provider.ContactsContract;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -63,11 +64,13 @@ public class LoginActivity extends AppCompatActivity {
 
 //                id = loginText.getText().toString();
 //                users.child(id).setValue(new UserData(loginText.getText().toString()));
-                Intent intent = new Intent(LoginActivity.this, QuestionOne.class);
+                Intent intent = new Intent(LoginActivity.this, whatiscarbon.class);
 //                startActivity(intent);
 //                signInClicked = true;
 ////                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
 //
+
+                signIn.setBackgroundColor(Color.parseColor("#ede21b"));
 //
 //                String id = loginText.getText().toString();
 //                users.child(id).setValue(new UserData(loginText.getText().toString()));
@@ -102,5 +105,12 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        signIn.setBackgroundColor(Color.parseColor("#26ffffff"));
+
     }
 }

@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ryzen.ryan.carbonzero.whatiscarbon">
@@ -16,24 +17,23 @@
         android:src="@drawable/background" />
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="87dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="120dp"
         android:layout_marginRight="5dp"
-        android:src="@drawable/textone"
-        android:id="@+id/imageView2" />
+        android:layout_marginTop="120dp"
+        android:src="@drawable/textone" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="145dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView2"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="70dp"
-        android:layout_marginLeft="3dp;"
         android:src="@drawable/texttwo" />
-
 
 
 </RelativeLayout>

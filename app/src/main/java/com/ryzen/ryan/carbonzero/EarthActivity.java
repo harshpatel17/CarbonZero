@@ -6,7 +6,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -22,8 +24,12 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
 
     LinearLayout wheelCenter;
 
+    TextView goalNum;
     String selectedItem;
     Fragment selectedFragment = null;
+
+    Bundle totalBundle;
+    int startTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,18 +45,29 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
+        goalNum = findViewById(R.id.goalNum);
+        String initialGoal = getIntent().getStringExtra("startGoal");
+        goalNum.setText(initialGoal);
+
         // Wheel
         earthWheel = findViewById(R.id.wheel_image);
         loadData();
         earthWheel.setOnMenuSelectedListener(this);
         wheelCenter = findViewById(R.id.goalLayout);
 
+
+        startTotal = getIntent().getIntExtra("startTotal", 1000);
+        totalBundle = new Bundle();
+        totalBundle.putInt("totalCarbon", startTotal);
+
         Toast.makeText(getBaseContext(), "Selected: "+ "travel", Toast.LENGTH_SHORT).show();
         CarbonFragment carbonFragment = new CarbonFragment();
+        carbonFragment.setArguments(totalBundle);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         selectedFragment = carbonFragment;
         transaction.replace(R.id.frameLayout, selectedFragment);
         transaction.commit();
+
 
         wheelCenter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,14 +84,17 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
                     case "food":
                         Toast.makeText(getBaseContext(), "Selected: "+ "food", Toast.LENGTH_SHORT).show();
                         SliderFragment sliderFragment = new SliderFragment();
+                        sliderFragment.setArguments(totalBundle);
                         transaction = getSupportFragmentManager().beginTransaction();
                         selectedFragment = sliderFragment;
+
                         transaction.replace(R.id.frameLayout,selectedFragment);
                         transaction.commit();
                         break;
                     case "carbon":
                         Toast.makeText(getBaseContext(), "Selected: "+ "travel", Toast.LENGTH_SHORT).show();
                         CarbonFragment carbonFragment = new CarbonFragment();
+                        carbonFragment.setArguments(totalBundle);
                         transaction = getSupportFragmentManager().beginTransaction();
                         selectedFragment = carbonFragment;
                         transaction.replace(R.id.frameLayout, selectedFragment);
@@ -130,4 +150,5 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
             selectedItem = list.get(pos).imageDescription;
         }
     }
+
 }

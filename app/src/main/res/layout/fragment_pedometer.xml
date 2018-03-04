@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="300dp"
     tools:context="com.ryzen.ryan.carbonzero.CarbonFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -9,33 +9,58 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:layout_marginTop="45dp">
 
-        <TextView
-            android:id="@+id/textView3"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:textColor="#BDB76B"
-            android:textSize="40dp"
-            android:text="Steps:"
-            android:gravity="center"
-            android:fontFamily="@font/aller"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/pedometerText"
+            <Space
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:fontFamily="@font/antonio"
+                android:text="STEPS:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#ede21b"
+                android:textSize="50dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="0"
-            android:textColor="#fff"
-            android:textSize="100dp"
-            android:gravity="center"
-            android:fontFamily="@font/aller"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/pedometerText"
+                android:layout_width="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_height="164dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/aller"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="125dp"
+                android:translationY="-25dp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

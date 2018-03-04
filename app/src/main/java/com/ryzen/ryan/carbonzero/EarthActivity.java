@@ -43,7 +43,15 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
         earthWheel = findViewById(R.id.wheel_image);
         loadData();
         earthWheel.setOnMenuSelectedListener(this);
-        wheelCenter = findViewById(R.id.id_wheel_menu_center_item);
+        wheelCenter = findViewById(R.id.goalLayout);
+
+        Toast.makeText(getBaseContext(), "Selected: "+ "travel", Toast.LENGTH_SHORT).show();
+        CarbonFragment carbonFragment = new CarbonFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        selectedFragment = carbonFragment;
+        transaction.replace(R.id.frameLayout, selectedFragment);
+        transaction.commit();
+
         wheelCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

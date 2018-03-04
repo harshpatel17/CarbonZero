@@ -1,7 +1,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="300dp"
     tools:context="com.ryzen.ryan.carbonzero.CarbonFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -26,8 +26,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="CURRENT GOAL:"
-                android:textColor="#BDB76B"
+                android:text="CURRENT PRINT:"
+                android:textColor="#ede21b"
                 android:textSize="50dp"
                 android:fontFamily="@font/antonio"/>
         </LinearLayout>

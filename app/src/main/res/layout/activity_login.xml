@@ -87,7 +87,7 @@
         android:layout_below="@+id/pwText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
-        android:background="#73228B22"
+        android:background="#73ede21b"
         android:text="LOGIN"
         android:fontFamily="@font/aller"/>
 

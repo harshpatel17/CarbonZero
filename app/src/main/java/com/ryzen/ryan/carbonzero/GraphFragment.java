@@ -62,7 +62,7 @@ public class GraphFragment extends Fragment {
             series.appendData(new DataPoint(calendar.getTime(),i*3), true, 30);
         }
         // styling series
-        series.setColor(Color.GREEN);
+        series.setColor(Color.parseColor("#ede21b"));
         series.setDrawDataPoints(true);
         series.setDataPointsRadius(10);
         series.setThickness(8);
@@ -85,13 +85,14 @@ public class GraphFragment extends Fragment {
         // enable scaling and scrolling
         graph.getViewport().setScalable(true);
         graph.getViewport().setScalableY(true);
-        graph.setTitle("Daily Footprints");
 
         graph.addSeries(series);
         // set date label formatter
         graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getActivity()));
         graph.getGridLabelRenderer().setNumHorizontalLabels(3); // only 4 because of the space
-
+        graph.getGridLabelRenderer().setHorizontalLabelsColor(Color.WHITE);
+        graph.getGridLabelRenderer().setVerticalLabelsColor(Color.WHITE);
+        graph.getGridLabelRenderer().setGridColor(Color.WHITE);
         graph.getViewport().setMinX(d1.getTime());
         graph.getViewport().setMaxX(d3.getTime());
         graph.getViewport().setXAxisBoundsManual(true);

@@ -35,7 +35,8 @@
         <activity android:name=".QuestionFour" />
         <activity android:name=".QuestionFive" />
         <activity android:name=".QuestionSix" />
-        <activity android:name=".QuestionSeven"></activity>
+        <activity android:name=".QuestionSeven" />
+        <activity android:name=".whatiscarbon"></activity>
     </application>
 
 </manifest>

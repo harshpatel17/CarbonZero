@@ -66,7 +66,7 @@
             app:wheelBackgroundColor="#26dcdcdc"
             app:wheelItemRotateMode="none"
             app:wheelSelectedAngle="270"
-            app:wheelCenterRadio="0.28"
+            app:wheelCursorColor="#ede21b"
             app:wheelItemRadio="0.1">
 
             <TextView

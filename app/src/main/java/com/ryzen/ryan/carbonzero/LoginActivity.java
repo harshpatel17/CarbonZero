@@ -25,12 +25,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText pwText;
     Button signIn;
     Boolean signInClicked = false;
-
+//
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference loginRef;
     DatabaseReference users;
 
-    List<UserData> userDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         pwText = findViewById(R.id.pwText);
         signIn = findViewById(R.id.signIn);
 
-        userDataList = new ArrayList<>();
 
 
         signIn.setOnClickListener(new View.OnClickListener() {
@@ -89,14 +87,14 @@ public class LoginActivity extends AppCompatActivity {
         users.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(signInClicked) {
-                    for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                        UserData userData = userSnapshot.getValue(UserData.class);
-
-                        if(userData.getEmailID().equals("hayho"))
-                            Toast.makeText(LoginActivity.this, "IT EXISTS!!! ", Toast.LENGTH_SHORT).show();
-                    }
-                }
+//                if(signInClicked) {
+//                    for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+//                        UserData userData = userSnapshot.getValue(UserData.class);
+//
+//                        if(userData.getEmailID().equals("hayho"))
+//                            Toast.makeText(LoginActivity.this, "IT EXISTS!!! ", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
             }
 
             @Override

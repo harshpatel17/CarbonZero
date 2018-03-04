@@ -1,7 +1,13 @@
 package com.ryzen.ryan.carbonzero;
 
+import android.content.Intent;
+import android.graphics.Color;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class QuestionSeven extends AppCompatActivity {
 
@@ -43,7 +49,9 @@ public class QuestionSeven extends AppCompatActivity {
         choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(QuestionSeven.this, EarthActivity.class).putExtra("qSix", q6+" 0");
+                choiceOne.setBackgroundColor(Color.parseColor("#ede21b"));
+
+                Intent intent = new Intent(QuestionSeven.this, TotalCarbon.class).putExtra("qSeven", q6+" 0");
                 startActivity(intent);
             }
         });
@@ -51,7 +59,9 @@ public class QuestionSeven extends AppCompatActivity {
         choiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(QuestionSeven.this, EarthActivity.class).putExtra("qSix", q6+" 1");
+                choiceTwo.setBackgroundColor(Color.parseColor("#ede21b"));
+
+                Intent intent = new Intent(QuestionSeven.this, TotalCarbon.class).putExtra("qSeven", q6+" 1");
                 startActivity(intent);
             }
         });
@@ -59,7 +69,9 @@ public class QuestionSeven extends AppCompatActivity {
         choiceThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( QuestionSeven.this, EarthActivity.class).putExtra("qSix", q6+" 2");
+                choiceThree.setBackgroundColor(Color.parseColor("#ede21b"));
+
+                Intent intent = new Intent( QuestionSeven.this, TotalCarbon.class).putExtra("qSeven", q6+" 2");
                 startActivity(intent);
             }
         });
@@ -67,7 +79,9 @@ public class QuestionSeven extends AppCompatActivity {
         choiceFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(QuestionSeven.this, EarthActivity.class).putExtra("qSix",q6+ " 3");
+                choiceFour.setBackgroundColor(Color.parseColor("#ede21b"));
+
+                Intent intent = new Intent(QuestionSeven.this, TotalCarbon.class).putExtra("qSeven",q6+ " 3");
                 startActivity(intent);
             }
         });
@@ -75,7 +89,9 @@ public class QuestionSeven extends AppCompatActivity {
         choiceFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(QuestionSeven.this, EarthActivity.class).putExtra("qSix",q6+" 4");
+                choiceFive.setBackgroundColor(Color.parseColor("#ede21b"));
+
+                Intent intent = new Intent(QuestionSeven.this, TotalCarbon.class).putExtra("qSeven",q6+" 4");
                 startActivity(intent);
             }
         });

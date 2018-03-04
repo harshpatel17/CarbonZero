@@ -6,18 +6,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ryzen.ryan.carbonzero.R;
-
 /**
  * Created by Ryan on 2/24/2018.
  */
 
-public class CarbonFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_carbon, container, false);
+        View v = inflater.inflate(R.layout.fragment_settings, container, false);
 
 
 

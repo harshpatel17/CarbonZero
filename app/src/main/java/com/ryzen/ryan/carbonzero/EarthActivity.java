@@ -92,6 +92,14 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
                         transaction.replace(R.id.frameLayout, selectedFragment);
                         transaction.commit();
                         break;
+                    case "settings":
+                        Toast.makeText(getBaseContext(), "Selected: "+ "graphs", Toast.LENGTH_SHORT).show();
+                        SettingsFragment settingsFragment = new SettingsFragment();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        selectedFragment = settingsFragment;
+                        transaction.replace(R.id.frameLayout, selectedFragment);
+                        transaction.commit();
+                        break;
                     default:
                 }
             }
@@ -106,7 +114,9 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
         list.add(new EarthWheelData(R.drawable.carrot, "food"));
         list.add(new EarthWheelData(R.drawable.walking, "pedometer"));
         list.add(new EarthWheelData(R.drawable.washingmachine, "washing_machine"));
+//        list.add(new EarthWheelData(R.drawable.waterbottle, "water"));
         list.add(new EarthWheelData(R.drawable.linechart, "graph"));
+        list.add(new EarthWheelData(R.drawable.settings, "settings"));
 
         EarthWheelAdapter earthWheelAdapter = new EarthWheelAdapter(getBaseContext(), list);
         earthWheel.setAdapter(earthWheelAdapter);

@@ -1,9 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ryzen.ryan.carbonzero.TotalCarbon">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/formBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="103dp"
+        android:fontFamily="@font/antonio"
+        android:text="TOTAL CARBON POINTS:"
+        android:textColor="#ede21b"
+        android:textSize="40dp"/>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText"
+        android:layout_alignStart="@+id/earthBtn"
+        android:layout_marginBottom="9dp"
+        android:fontFamily="@font/antonio"
+        android:text="Set your goal"
+        android:textColor="#ede21b"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/totalCP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:fontFamily="@font/aller"
+        android:textSize="50dp"
+        android:textColor="#ffffff"
+        android:text="0" />
+
+    <Button
+        android:id="@+id/earthBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="139dp"
+        android:background="#26ede21b"
+        android:text="Set" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_above="@+id/earthBtn"
+        android:layout_marginBottom="17dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
+        android:background="@drawable/boxone"
+        android:ems="10"
+        android:gravity="center"
+        android:inputType="number"
+        android:textSize="15dp" />
+
+</RelativeLayout>

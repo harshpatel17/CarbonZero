@@ -11,54 +11,45 @@
         android:orientation="vertical"
         android:layout_marginTop="45dp">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent">
 
-            <Space
-                android:layout_width="80dp"
+            <Button
+                android:id="@+id/earthBtn2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="80dp"
+                android:background="#26ede21b"
+                android:text="Set" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_above="@+id/earthBtn2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/boxone"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="CURRENT PRINT:"
+                android:layout_above="@+id/editText2"
+                android:layout_alignEnd="@+id/earthBtn2"
+                android:layout_marginBottom="11dp"
+                android:fontFamily="@font/antonio"
+                android:text="Set your goal"
                 android:textColor="#ede21b"
-                android:textSize="50dp"
-                android:fontFamily="@font/antonio"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:orientation="horizontal">
-
-            <Space
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/currentGoal"
-                android:layout_width="match_parent"
-                android:layout_height="164dp"
-                android:layout_weight="1"
-                android:text="3000"
-                android:textColor="#fff"
-                android:textSize="125dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/aller"
-                android:translationY="-45dp" />
-        </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="300dp" />
+                android:textSize="20dp" />
+        </RelativeLayout>
 
     </LinearLayout>
 

@@ -46,14 +46,14 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questions);
-         createArray();
+        createArray();
         fuelSpinner = (Spinner) findViewById(R.id.Q1);
         elecSpinner = (Spinner) findViewById(R.id.Q2);
-       gasSpinner = (Spinner) findViewById(R.id.Q3);
-         stateSpinner = (Spinner) findViewById(R.id.Q5);
+        gasSpinner = (Spinner) findViewById(R.id.Q3);
+        stateSpinner = (Spinner) findViewById(R.id.Q5);
         recycleSpinner = (Spinner) findViewById(R.id.Q6);
         meatSpinner = (Spinner) findViewById(R.id.Q7);
-         veggieSpinner = (Spinner) findViewById(R.id.Q8);
+        veggieSpinner = (Spinner) findViewById(R.id.Q8);
 
 
         fuelSpinner.setOnItemSelectedListener(this);

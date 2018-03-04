@@ -24,8 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<activity android:name=".Questions"/>
-        <activity android:name=".Slider"/>
+        <activity android:name=".Questions" />
+        <activity android:name=".Slider" />
         <activity android:name=".EarthActivity" />
         <activity android:name=".QuestionsActivity" />
         <activity
@@ -37,7 +37,8 @@
         <activity android:name=".QuestionFour" />
         <activity android:name=".QuestionFive" />
         <activity android:name=".QuestionSix" />
-        <activity android:name=".QuestionSeven"></activity>
+        <activity android:name=".QuestionSeven" />
+        <activity android:name=".TotalCarbon"></activity>
     </application>
 
 </manifest>

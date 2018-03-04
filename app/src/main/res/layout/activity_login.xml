@@ -48,16 +48,15 @@
 
     <EditText
         android:id="@+id/loginText"
-        android:layout_width="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/formLogo"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="26dp"
         android:background="@drawable/boxone"
-        android:fontFamily="@font/aller"
         android:ems="10"
+        android:fontFamily="@font/aller"
         android:hint="USERNAME"
         android:inputType="textPersonName"
         android:paddingHorizontal="20dp" />
@@ -69,8 +68,8 @@
         android:layout_height="40dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/loginText"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/aller"
         android:background="@drawable/boxone"
@@ -82,14 +81,16 @@
 
     <Button
         android:id="@+id/signIn"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="34dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+
         android:layout_below="@+id/pwText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="23dp"
         android:background="#73ede21b"
-        android:text="LOGIN"
-        android:fontFamily="@font/aller"/>
+        android:fontFamily="@font/aller"
+        android:text="LOGIN" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -108,6 +109,7 @@
             android:textColor="#fff"
             android:layout_gravity="center"
             android:fontFamily="@font/aller"
+            android:textSize="10dp"
             android:gravity="right"/>
 
 
@@ -122,25 +124,9 @@
             android:text="Sign Up"
             android:fontFamily="@font/aller"
             android:textColor="#fff"
-
+            android:textSize="10dp"
             android:textStyle="bold" />
     </LinearLayout>
 
 
 </RelativeLayout>
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-    <!--xmlns:tools="http://schemas.android.com/tools"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="match_parent"-->
-    <!--tools:context="com.ryzen.ryan.carbonzero.LoginActivity">-->
-
-
-
-
-
-
-
-<!--</RelativeLayout>-->

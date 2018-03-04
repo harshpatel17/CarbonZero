@@ -9,7 +9,7 @@ public class QuestionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_questions);
+        setContentView(R.layout.activity_slider);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();

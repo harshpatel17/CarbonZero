@@ -19,6 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<activity android:name=".Questions"/>
+        <activity android:name=".Slider"/>
         <activity android:name=".EarthActivity" />
         <activity android:name=".QuestionsActivity"></activity>
     </application>

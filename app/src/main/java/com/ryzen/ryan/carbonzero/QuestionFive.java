@@ -1,9 +1,11 @@
 package com.ryzen.ryan.carbonzero;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -40,9 +42,12 @@ public class QuestionFive extends AppCompatActivity {
         Intent intent = getIntent();
         final String q4 = intent.getStringExtra("qFour");
 
+
         choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceOne.setBackgroundColor(Color.parseColor("#ede21b"));
+
                 Intent intent = new Intent(QuestionFive.this, QuestionSix.class).putExtra("qFive", q4+" 0");
                 startActivity(intent);
             }
@@ -51,6 +56,7 @@ public class QuestionFive extends AppCompatActivity {
         choiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceTwo.setBackgroundColor(Color.parseColor("#ede21b"));
                 Intent intent = new Intent(QuestionFive.this, QuestionSix.class).putExtra("qFive", q4+" 1");
                 startActivity(intent);
             }
@@ -59,6 +65,7 @@ public class QuestionFive extends AppCompatActivity {
         choiceThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceThree.setBackgroundColor(Color.parseColor("#ede21b"));
                 Intent intent = new Intent( QuestionFive.this, QuestionSix.class).putExtra("qFive", q4+" 2");
                 startActivity(intent);
             }
@@ -67,6 +74,7 @@ public class QuestionFive extends AppCompatActivity {
         choiceFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceFour.setBackgroundColor(Color.parseColor("#ede21b"));
                 Intent intent = new Intent(QuestionFive.this, QuestionSix.class).putExtra("qFive",q4+ " 3");
                 startActivity(intent);
             }
@@ -75,10 +83,22 @@ public class QuestionFive extends AppCompatActivity {
         choiceFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceFive.setBackgroundColor(Color.parseColor("#ede21b"));
                 Intent intent = new Intent(QuestionFive.this, QuestionSix.class).putExtra("qFive",q4+" 4");
                 startActivity(intent);
             }
         });
 
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        choiceOne.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceTwo.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceThree.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceFour.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceFive.setBackgroundColor(Color.parseColor("#26ffffff"));
     }
 }

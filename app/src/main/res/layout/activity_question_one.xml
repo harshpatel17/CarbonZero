@@ -41,54 +41,84 @@
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="306dp"
+            android:layout_width="wrap_content"
             android:layout_height="71dp"
-            android:layout_marginLeft="27dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="40dp"
             android:font="@font/aller"
-            android:text="HOW MUCH DO YOU SPEND ON GASOLINE ON AVERAGE ON GASOLINE THE ENTIRE MONTH?"
             android:textColor="#fff"
-            android:textSize="17dp" />
+            android:textSize="17dp"
+            android:text="HOW MUCH DO YOU SPEND ON AVERAGE ON GASOLINE IN AN MONTH?"
+            />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="162dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="15dp"
             android:text="Select one of the options below:"
             android:textColor="#fff"
             android:textSize="10dp" />
 
         <Button
             android:id="@+id/choiceOne"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="$0 - $100" />
+            android:layout_width="320dp"
+            android:layout_marginLeft="19dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="19dp"
+            android:font="@font/aller"
+            android:textSize="14dp"
+            android:text="$0 - $100"
+            android:background="#26ffffff"
+            />
 
         <Button
             android:id="@+id/choiceTwo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="$100 - $200" />
+            android:layout_width="320dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="19dp"
+            android:layout_height="45dp"
+            android:textSize="14dp"
+            android:font="@font/aller"
+            android:text="$100 - $200"
+            android:background="#26ffffff"/>
+
 
         <Button
             android:id="@+id/choiceThree"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="$200 - $300" />
+            android:layout_marginTop="7dp"
+            android:layout_marginLeft="19dp"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:textSize="14dp"
+            android:font="@font/aller"
+            android:text="$200 - $300"
+            android:background="#26ffffff"/>
 
         <Button
             android:id="@+id/choiceFour"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="$300 - $400" />
+            android:layout_marginTop="7dp"
+            android:layout_width="320dp"
+            android:layout_marginLeft="19dp"
+            android:layout_height="45dp"
+            android:textSize="14dp"
+            android:font="@font/aller"
+            android:text="$300 - $400"
+            android:background="#26ffffff"
+        />
 
         <Button
             android:id="@+id/choiceFive"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="$400 - $500" />
+            android:layout_marginTop="7dp"
+            android:layout_width="320dp"
+            android:layout_marginLeft="19dp"
+            android:layout_height="45dp"
+            android:textSize="14dp"
+            android:font="@font/aller"
+            android:text="$400 - $500"
+            android:background="#26ffffff"/>
+
 
     </LinearLayout>
 </RelativeLayout>

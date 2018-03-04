@@ -64,16 +64,16 @@ public class Questions extends AppCompatActivity implements AdapterView.OnItemSe
         recycleSpinner.setOnItemSelectedListener(this);
 
 
-         meatIntent = new Intent(getBaseContext(), Slider.class);
+         meatIntent = new Intent(getBaseContext(), SliderFragment.class);
         meatIntent.putExtra("GET_SOME_MEAT", calculateMeat());
         startActivity(meatIntent);
 
-         veggiesIntent = new Intent(getBaseContext(), Slider.class);
+         veggiesIntent = new Intent(getBaseContext(), SliderFragment.class);
         veggiesIntent.putExtra("GET_SOME_VEG", calculateVeggies());
         startActivity(veggiesIntent);
 
 
-        totalCPIntent = new Intent(getBaseContext(), Slider.class);
+        totalCPIntent = new Intent(getBaseContext(), SliderFragment.class);
         totalCPIntent.putExtra("GET_ALL", getTotalCarbonPoints());
         startActivity(totalCPIntent);
 

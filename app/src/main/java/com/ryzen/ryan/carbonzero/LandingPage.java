@@ -3,13 +3,14 @@ package com.ryzen.ryan.carbonzero;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.Buffer;
 
 public class LandingPage extends AppCompatActivity {
 
@@ -44,25 +46,50 @@ public class LandingPage extends AppCompatActivity {
         File dir = new File(path);
         dir.mkdir();
 
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
+
+
         landingLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                file = new File(path+"/prelim_data.txt");
-//                if(file.isFile()) {
-//                    initialFile(file);
-//                }
-//                String [] data = Load(file);
-//                if (data[0].equals("false")){
-//                    Toast.makeText(getApplicationContext(), "It is false!", Toast.LENGTH_SHORT).show();
-                    Intent questionIntent = new Intent(LandingPage.this, Questions.class);
+                file = new File(path+"/prelim_data.txt");
+                if(file.isFile()) {
+                    initialFile(file);
+                }
+                String [] data = Load(file);
+                if (data[0].equals("false")){
+                    Toast.makeText(getApplicationContext(), "It is false!", Toast.LENGTH_SHORT).show();
+                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
                     startActivity(questionIntent);
-//                }else{
+                }else{
+                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
+                    startActivity(earthIntent);
+                }
+//                try{
+//                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
+//                    startActivity(questionIntent);
+//                }catch(Exception e){
 //                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
 //                    startActivity(earthIntent);
 //                }
-//
+                Intent loginIntent = new Intent(LandingPage.this, LoginActivity.class);
+                startActivity(loginIntent);
             }
         });
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 
     private void initialFile(File file) {

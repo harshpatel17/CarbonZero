@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/landingLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ryzen.ryan.carbonzero.LoginActivity">
+
+    <TextView
+        android:id="@+id/quoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/formBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/formLogo"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+
+
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/formTopBar"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/mlogo" />
+
+    <ImageView
+        android:id="@+id/formTopBar"
+        android:layout_width="300dp"
+        android:layout_height="5dp"
+        android:layout_alignBottom="@+id/quoteText"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/topbar" />
+
+    <EditText
+        android:id="@+id/loginText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/formLogo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/boxone"
+        android:ems="10"
+        android:hint="USERNAME"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="20dp" />
+
+
+    <EditText
+        android:id="@+id/pwText"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/loginText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+
+        android:background="@drawable/boxone"
+        android:ems="10"
+        android:hint="PASSWORD"
+        android:inputType="textPassword"
+        android:paddingHorizontal="20dp" />
+
+
+    <Button
+        android:id="@+id/signIn"
+        android:layout_width="300dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/pwText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:background="#73228B22"
+        android:text="Sign In" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signIn"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Don't have an account? "
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:gravity="right"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/signIn"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Sign Up"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</RelativeLayout>
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context="com.ryzen.ryan.carbonzero.LoginActivity">-->
+
+
+
+
+
+
+
+<!--</RelativeLayout>-->

@@ -4,10 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ryzen.ryan.carbonzero.EarthActivity">
+    tools:context="com.ryzen.ryan.carbonzero.EarthActivity"
+    android:background="@drawable/background">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to Planet Earth" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/frameLayout"
+        android:layout_marginTop="20dp"
+        >
+
+        <github.hellocsl.cursorwheel.CursorWheelLayout
+            android:id="@+id/wheel_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            app:wheelBackgroundColor="#26dcdcdc"
+            app:wheelItemRotateMode="none"
+            app:wheelSelectedAngle="270"
+            app:wheelCenterRadio="0.5"
+            app:wheelItemRadio="0.2">
+
+            <LinearLayout
+                android:id="@id/id_wheel_menu_center_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="GOAL"
+                    android:textColor="#fff"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="2400"
+                    android:textColor="#BDB76B"
+                    android:textSize="40dp" />
+            </LinearLayout>
+
+
+        </github.hellocsl.cursorwheel.CursorWheelLayout>
+    </LinearLayout>
+
+
 </RelativeLayout>

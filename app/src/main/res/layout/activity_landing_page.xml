@@ -47,32 +47,15 @@ tools:context="com.ryzen.ryan.carbonzero.LandingPage">
         android:scaleType="centerCrop"
         android:src="@drawable/topbar" />
 
+
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="320dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="230dp"
+        android:id="@+id/loginBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/formLogo"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/password_box" />
-
-    <ImageView
-        android:layout_width="320dp"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_marginTop="87dp"
-        android:src="@drawable/password_box"
-        android:id="@+id/passwordBox" />
-
-    <ImageView
-        android:layout_width="320dp"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_alignTop="@+id/imageView"
-        android:layout_marginTop="192dp"
-        android:src="@drawable/login_box"
-        android:id="@+id/loginBox" />
+        android:layout_marginTop="74dp"
+        android:src="@drawable/starthere" />
 
 
 

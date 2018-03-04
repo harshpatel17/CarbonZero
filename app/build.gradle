@@ -31,6 +31,8 @@ dependencies {
     // Cursor Wheel Layout
     compile 'github.hellocsl:CursorWheelLayout:1.1.0'
 
+    // Graph View
+    compile 'com.jjoe64:graphview:4.2.1'
 }
 
 

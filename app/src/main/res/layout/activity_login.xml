@@ -49,40 +49,35 @@
     <EditText
         android:id="@+id/loginText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/usernameBox"
-        android:layout_alignTop="@+id/loginBox"
-        android:layout_marginTop="20dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/formLogo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/boxone"
         android:ems="10"
         android:hint="USERNAME"
-        android:inputType="textPersonName" />
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/formTopBar"
-        android:layout_alignTop="@+id/formLogo"
-        android:layout_marginTop="25dp"
-        android:src="@drawable/password_box"
-        android:id="@+id/usernameBox" />
+        android:inputType="textPersonName"
+        android:paddingHorizontal="20dp" />
+
 
     <EditText
         android:id="@+id/pwText"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/usernameBox"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/loginText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="8dp"
+
+        android:background="@drawable/boxone"
         android:ems="10"
         android:hint="PASSWORD"
         android:inputType="textPassword"
-/>
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/usernameBox"
-        android:layout_alignTop="@+id/usernameBox"
-        android:layout_marginTop="85dp"
-        android:src="@drawable/password_box"
-        android:id="@+id/passwordBox" />
+        android:paddingHorizontal="20dp" />
+
 
     <Button
         android:id="@+id/signIn"
@@ -91,17 +86,40 @@
         android:layout_below="@+id/pwText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
-        android:background="@null"
+        android:background="#73228B22"
         android:text="Sign In" />
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/usernameBox"
-        android:layout_alignTop="@+id/usernameBox"
-        android:layout_marginTop="182dp"
-        android:src="@drawable/login_box"
-        android:id="@+id/loginBox" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signIn"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Don't have an account? "
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:gravity="right"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/signIn"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="Sign Up"
+            android:textColor="#fff"
+            android:textStyle="bold" />
+    </LinearLayout>
 
 
 </RelativeLayout>

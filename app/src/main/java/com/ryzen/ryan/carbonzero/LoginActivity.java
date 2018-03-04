@@ -30,6 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseReference loginRef;
     DatabaseReference users;
 
+    View decorView;
+    int uiOPtions;
+
     String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +64,11 @@ public class LoginActivity extends AppCompatActivity {
 //                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
 
 
-                id = loginText.getText().toString();
-                users.child(id).setValue(new UserData(loginText.getText().toString()));
+//                id = loginText.getText().toString();
+//                users.child(id).setValue(new UserData(loginText.getText().toString()));
 //                if(tryLogin("","")) {
-//                    Intent intent = new Intent(LoginActivity.this, EarthActivity.class);
-//                    startActivity(intent);
+                    Intent intent = new Intent(LoginActivity.this, EarthActivity.class);
+                    startActivity(intent);
 //                }
             }
         });
@@ -79,14 +82,14 @@ public class LoginActivity extends AppCompatActivity {
         users.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(signInClicked) {
-                    for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                        UserData userData = userSnapshot.getValue(UserData.class);
-                        Toast.makeText(LoginActivity.this, "IT EXISTS!!! " + id, Toast.LENGTH_SHORT).show();
-
-                        if(userData.getEmailID().equals(id)){}
-                    }
-                }
+//                if(signInClicked) {
+//                    for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+//                        UserData userData = userSnapshot.getValue(UserData.class);
+//                        Toast.makeText(LoginActivity.this, "IT EXISTS!!! " + id, Toast.LENGTH_SHORT).show();
+//
+//                        if(userData.getEmailID().equals(id)){}
+//                    }
+//                }
             }
 
             @Override

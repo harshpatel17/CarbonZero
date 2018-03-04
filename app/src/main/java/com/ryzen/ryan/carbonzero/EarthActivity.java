@@ -5,10 +5,13 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,21 +23,16 @@ import java.util.List;
 
 import github.hellocsl.cursorwheel.CursorWheelLayout;
 
-public class EarthActivity extends AppCompatActivity implements SensorEventListener, CursorWheelLayout.OnMenuSelectedListener {
+public class EarthActivity extends AppCompatActivity implements CursorWheelLayout.OnMenuSelectedListener {
 
 
     CursorWheelLayout earthWheel;
     List<EarthWheelData> list;
 
-    // Step Counter Sensor
-    private SensorManager mSensorManager;
-    private Sensor mSensor;
-    TextView pedometerText;
-    boolean running = false;
+    LinearLayout wheelCenter;
 
-    // Firebase
-    DatabaseReference pedometerRef;
-    DatabaseReference dailyRef;
+    String selectedItem;
+    Fragment selectedFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,74 +48,73 @@ public class EarthActivity extends AppCompatActivity implements SensorEventListe
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
-        // Sets up pedometer sensor
-        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        pedometerText = findViewById(R.id.pedometerText);
-
         // Wheel
         earthWheel = findViewById(R.id.wheel_image);
         loadData();
         earthWheel.setOnMenuSelectedListener(this);
+        wheelCenter = findViewById(R.id.id_wheel_menu_center_item);
+        wheelCenter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch(selectedItem){
+                    case "pedometer":
+                        PedometerFragment pedometerFragment = new PedometerFragment();
+                        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                        selectedFragment = pedometerFragment;
+                        transaction.replace(R.id.frameLayout, selectedFragment);
+                        transaction.commit();
+                        Toast.makeText(getBaseContext(), "Selected: "+ "pedometer", Toast.LENGTH_SHORT).show();
+                        break;
+                    case "food":
+                        Toast.makeText(getBaseContext(), "Selected: "+ "food", Toast.LENGTH_SHORT).show();
 
-        // Firebase
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        pedometerRef = database.getReference("pedometer");
-        dailyRef = database.getReference("daily");
+                        break;
+                    case "carbon":
+                        Toast.makeText(getBaseContext(), "Selected: "+ "travel", Toast.LENGTH_SHORT).show();
+                        CarbonFragment carbonFragment = new CarbonFragment();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        selectedFragment = carbonFragment;
+                        transaction.replace(R.id.frameLayout, selectedFragment);
+                        transaction.commit();
+                        break;
+                    case "washing_machine":
+                        Toast.makeText(getBaseContext(), "Selected: "+ "washing_mac", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case "graph":
+                        Toast.makeText(getBaseContext(), "Selected: "+ "graphs", Toast.LENGTH_SHORT).show();
+                        GraphFragment graphFragment = new GraphFragment();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        selectedFragment = graphFragment;
+                        transaction.replace(R.id.frameLayout, selectedFragment);
+                        transaction.commit();
+                        break;
+                    default:
+                }
+            }
+        });
+
     }
 
     // Wheel data loaded
     private void loadData(){
         list = new ArrayList<>();
-        list.add(new EarthWheelData(R.drawable.fb_ic, "Facebook"));
-        list.add(new EarthWheelData(R.drawable.inst_ic, "Instagram"));
-        list.add(new EarthWheelData(R.drawable.twitter_ic, "Twitter"));
+        list.add(new EarthWheelData(R.drawable.footprints, "carbon"));
+        list.add(new EarthWheelData(R.drawable.carrot, "food"));
+        list.add(new EarthWheelData(R.drawable.walking, "pedometer"));
+        list.add(new EarthWheelData(R.drawable.washingmachine, "washing_machine"));
+        list.add(new EarthWheelData(R.drawable.linechart, "graph"));
 
         EarthWheelAdapter earthWheelAdapter = new EarthWheelAdapter(getBaseContext(), list);
         earthWheel.setAdapter(earthWheelAdapter);
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        running = true;
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-        if(mSensor != null){
-            mSensorManager.registerListener(this, mSensor, mSensorManager.SENSOR_DELAY_UI);
-        }else{
-            Toast.makeText(this, "Sensor not found", Toast.LENGTH_SHORT).show();
-        }
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        running = false;
-    }
-
-    // Pedometer
-    @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
-            pedometerText.setText(String.valueOf(sensorEvent.values[0]));
-            pedometerRef.setValue(String.valueOf(sensorEvent.values[0]));
-            String key = dailyRef.push().getKey();
-            dailyRef.setValue(new DailyData(0,150, (int)sensorEvent.values[0]));
-            dailyRef.child("Victor").setValue("setting custom key when pushing new data to firebase database");
-
-    }
-    // Pedometer
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int i) {
-
     }
 
     //Wheel
     @Override
     public void onItemSelected(CursorWheelLayout parent, View view, int pos) {
         if (parent.getId() == R.id.wheel_image){
-            Toast.makeText(getBaseContext(), "Selected: "+ list.get(pos).imageDescription, Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getBaseContext(), "Selected: "+ list.get(pos).imageDescription, Toast.LENGTH_SHORT).show();
+            selectedItem = list.get(pos).imageDescription;
         }
     }
 }

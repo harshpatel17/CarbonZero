@@ -3,14 +3,13 @@ package com.ryzen.ryan.carbonzero;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -21,7 +20,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.Buffer;
 
 public class LandingPage extends AppCompatActivity {
 
@@ -36,6 +34,9 @@ public class LandingPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_landing_page);
         new getAPI().execute(quoteAPI);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         quoteText = findViewById(R.id.quoteText);
         landingLayout = findViewById(R.id.landingLayout);
@@ -58,7 +59,14 @@ public class LandingPage extends AppCompatActivity {
 //                    Toast.makeText(getApplicationContext(), "It is false!", Toast.LENGTH_SHORT).show();
 //                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
 //                    startActivity(questionIntent);
-//                }else {
+//                }else{
+//                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
+//                    startActivity(earthIntent);
+//                }
+//                try{
+//                    Intent questionIntent = new Intent(LandingPage.this, QuestionsActivity.class);
+//                    startActivity(questionIntent);
+//                }catch(Exception e){
 //                    Intent earthIntent = new Intent(LandingPage.this, EarthActivity.class);
 //                    startActivity(earthIntent);
 //                }

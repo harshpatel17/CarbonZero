@@ -1,9 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ryzen.ryan.carbonzero.QuestionsActivity">
+    android:orientation="vertical"
+   >
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How much do you spend on average on gasoline in a month?"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/Q1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
+        android:entries="@array/questionArray">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How much do you spend on electricity in a month? "
+        android:textSize="18sp" />
+
+
+    <Spinner
+        android:id="@+id/Q2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
+        android:entries="@array/questionArray">
+
+    </Spinner>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How much do you spend on natural gas in a month? "
+        android:textSize="18sp" />
+
+
+    <Spinner
+        android:id="@+id/Q3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
+        android:entries="@array/questionArray">
+
+    </Spinner>
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="What state do you currently live in? "
+        android:textSize="18sp" />
+
+
+    <Spinner
+        android:id="@+id/Q5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
+        android:entries="@array/stateArray">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Do you recycle?"
+        android:textSize="18sp" />
+
+
+    <Spinner
+        android:id="@+id/Q6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
+        android:entries="@array/recycleArray">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" In a month, how much meat do you eat? "
+        android:textSize="18sp" />
+
+
+    <Spinner
+        android:id="@+id/Q7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
+        android:entries="@array/meatArray">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="In a month, how much fruits and vegetables do you eat?"
+        android:textSize="18sp" />
+
+
+    <Spinner
+        android:id="@+id/Q8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#000000"
+        android:entries="@array/veggieArray">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="374dp"
+        android:layout_height="101dp"
+        android:text="TextView" />
+
+</LinearLayout>

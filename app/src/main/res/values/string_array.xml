@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="questionArray">
+        <item>$0-$100</item>
+        <item>$100-$200</item>
+        <item>$200-$300</item>
+        <item>$300-$400</item>
+        <item>$400-$500</item>
+    </string-array>
+
+    <string-array name="stateArray">
+        <item>Florida</item>
+    </string-array>
+
+    <string-array name="recycleArray">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="meatArray">
+        <item>None</item>
+        <item>Little</item>
+        <item>Average</item>
+        <item>Above average</item>
+        <item>Mostly</item>
+    </string-array>
+
+    <string-array name="veggieArray">
+        <item>None</item>
+        <item>Little</item>
+        <item>Average</item>
+        <item>Above average</item>
+        <item>Mostly</item>
+    </string-array>
+
+
+
+
+
+
+</resources>

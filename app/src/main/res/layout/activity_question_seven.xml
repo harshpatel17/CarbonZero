@@ -46,6 +46,7 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="71dp"
+
             android:layout_marginLeft="35dp"
             android:layout_marginTop="40dp"
             android:font="@font/aller"
@@ -70,6 +71,8 @@
             android:layout_height="45dp"
             android:layout_marginTop="19dp"
             android:font="@font/aller"
+            android:textColor="#B3ffffff"
+
             android:textSize="14dp"
             android:text="NONE"
             android:background="#26ffffff"
@@ -79,6 +82,8 @@
             android:id="@+id/choiceTwo"
             android:layout_width="320dp"
             android:layout_marginTop="7dp"
+            android:textColor="#B3ffffff"
+
             android:layout_marginLeft="19dp"
             android:layout_height="45dp"
             android:textSize="14dp"
@@ -90,6 +95,8 @@
         <Button
             android:id="@+id/choiceThree"
             android:layout_marginTop="7dp"
+            android:textColor="#B3ffffff"
+
             android:layout_marginLeft="19dp"
             android:layout_width="320dp"
             android:layout_height="45dp"
@@ -101,6 +108,8 @@
         <Button
             android:id="@+id/choiceFour"
             android:layout_marginTop="7dp"
+            android:textColor="#B3ffffff"
+
             android:layout_width="320dp"
             android:layout_marginLeft="19dp"
             android:layout_height="45dp"
@@ -114,6 +123,8 @@
             android:id="@+id/choiceFive"
             android:layout_marginTop="7dp"
             android:layout_width="320dp"
+            android:textColor="#B3ffffff"
+
             android:layout_marginLeft="19dp"
             android:layout_height="45dp"
             android:textSize="14dp"

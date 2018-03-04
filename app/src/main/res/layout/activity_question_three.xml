@@ -70,6 +70,8 @@
             android:textSize="14dp"
             android:text="$0 - $100"
             android:background="#26ffffff"
+            android:textColor="#B3ffffff"
+
             />
 
         <Button
@@ -80,6 +82,7 @@
             android:layout_height="45dp"
             android:textSize="14dp"
             android:font="@font/aller"
+            android:textColor="#B3ffffff"
             android:text="$100 - $200"
             android:background="#26ffffff"/>
 
@@ -88,6 +91,7 @@
             android:id="@+id/choiceThree"
             android:layout_marginTop="7dp"
             android:layout_marginLeft="19dp"
+            android:textColor="#B3ffffff"
             android:layout_width="320dp"
             android:layout_height="45dp"
             android:textSize="14dp"
@@ -100,6 +104,7 @@
             android:layout_marginTop="7dp"
             android:layout_width="320dp"
             android:layout_marginLeft="19dp"
+            android:textColor="#B3ffffff"
             android:layout_height="45dp"
             android:textSize="14dp"
             android:font="@font/aller"
@@ -112,6 +117,7 @@
             android:layout_marginTop="7dp"
             android:layout_width="320dp"
             android:layout_marginLeft="19dp"
+            android:textColor="#B3ffffff"
             android:layout_height="45dp"
             android:textSize="14dp"
             android:font="@font/aller"

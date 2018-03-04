@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ryzen.ryan.carbonzero.QuestionOne">
+
+    <ImageView
+        android:id="@+id/formBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@drawable/question1"
+                android:layout_marginTop="80dp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="306dp"
+            android:layout_height="71dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginTop="50dp"
+            android:font="@font/aller"
+            android:text="HOW MUCH DO YOU SPEND ON GASOLINE ON AVERAGE ON GASOLINE THE ENTIRE MONTH?"
+            android:textColor="#fff"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="30dp"
+            android:text="Select one of the options below:"
+            android:textColor="#fff"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/choiceOne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$0 - $100" />
+
+        <Button
+            android:id="@+id/choiceTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$100 - $200" />
+
+        <Button
+            android:id="@+id/choiceThree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$200 - $300" />
+
+        <Button
+            android:id="@+id/choiceFour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$300 - $400" />
+
+        <Button
+            android:id="@+id/choiceFive"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$400 - $500" />
+
+    </LinearLayout>
+</RelativeLayout>

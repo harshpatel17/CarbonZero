@@ -1,9 +1,11 @@
 package com.ryzen.ryan.carbonzero;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
@@ -37,6 +39,7 @@ public class QuestionFour extends AppCompatActivity {
         choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceOne.setBackgroundColor(Color.parseColor("#ede21b"));
                 Intent intent = new Intent(QuestionFour.this, QuestionFive.class).putExtra("qFour", q3+" 0");
                 startActivity(intent);
             }
@@ -45,9 +48,23 @@ public class QuestionFour extends AppCompatActivity {
         choiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceTwo.setBackgroundColor(Color.parseColor("#ede21b"));
                 Intent intent = new Intent(QuestionFour.this, QuestionFive.class).putExtra("qFour", q3+" 1");
                 startActivity(intent);
             }
         });
+
+
+
+
+
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        choiceOne.setBackgroundColor(Color.parseColor("#26ffffff"));
+        choiceTwo.setBackgroundColor(Color.parseColor("#26ffffff"));
     }
 }

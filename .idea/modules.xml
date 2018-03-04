@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CarbonZero.iml" filepath="$PROJECT_DIR$/.idea/CarbonZero.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CarbonZero.iml" filepath="$PROJECT_DIR$/CarbonZero.iml" />
       <module fileurl="file://D:\Projects\AndroidStudioProjects\CarbonZero\CarbonZero.iml" filepath="D:\Projects\AndroidStudioProjects\CarbonZero\CarbonZero.iml" />
+      <module fileurl="file://C:\Users\Ryan\Desktop\Projects\Android\CarbonZero\.idea\CarbonZero.iml" filepath="C:\Users\Ryan\Desktop\Projects\Android\CarbonZero\.idea\CarbonZero.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

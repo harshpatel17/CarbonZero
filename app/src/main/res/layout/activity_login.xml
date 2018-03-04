@@ -56,6 +56,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/boxone"
+        android:fontFamily="@font/aller"
         android:ems="10"
         android:hint="USERNAME"
         android:inputType="textPersonName"
@@ -71,7 +72,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="8dp"
-
+        android:fontFamily="@font/aller"
         android:background="@drawable/boxone"
         android:ems="10"
         android:hint="PASSWORD"
@@ -87,7 +88,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
         android:background="#73228B22"
-        android:text="Sign In" />
+        android:text="LOGIN"
+        android:fontFamily="@font/aller"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -105,6 +107,7 @@
             android:text="Don't have an account? "
             android:textColor="#fff"
             android:layout_gravity="center"
+            android:fontFamily="@font/aller"
             android:gravity="right"/>
 
 
@@ -117,7 +120,9 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="Sign Up"
+            android:fontFamily="@font/aller"
             android:textColor="#fff"
+
             android:textStyle="bold" />
     </LinearLayout>
 

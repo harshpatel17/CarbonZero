@@ -25,6 +25,7 @@ public class PedometerFragment extends Fragment implements SensorEventListener{
     // Step Counter Sensor
     private SensorManager mSensorManager;
     private Sensor mSensor;
+    private Sensor accelerometerSensor;
     TextView pedometerText;
     boolean running = false;
 
@@ -40,7 +41,10 @@ public class PedometerFragment extends Fragment implements SensorEventListener{
 
         // Sets up pedometer sensor
         mSensorManager = (SensorManager) this.getActivity().getSystemService(Context.SENSOR_SERVICE);
+        accelerometerSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+
         pedometerText = v.findViewById(R.id.pedometerText);
+
 
         // Firebase
         // Write a message to the database
@@ -76,6 +80,13 @@ public class PedometerFragment extends Fragment implements SensorEventListener{
     // Pedometer
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
+//        int accelerationFilter = (int) (sensorEvent.values[0] - (0.8)*9.81+(1-0.8)*sensorEvent.values[0]);
+//        Toast.makeText(getContext(), accelerationFilter, Toast.LENGTH_SHORT).show();
+//
+//        if (accelerationFilter >= 2) {
+//            Toast.makeText(getContext(), "Too fast!", Toast.LENGTH_SHORT).show();
+//
+//        }
         pedometerText.setText(String.valueOf(sensorEvent.values[0]));
         pedometerRef.setValue(String.valueOf(sensorEvent.values[0]));
         String key = dailyRef.push().getKey();

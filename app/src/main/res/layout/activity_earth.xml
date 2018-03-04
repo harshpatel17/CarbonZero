@@ -33,7 +33,7 @@
             app:wheelBackgroundColor="#26dcdcdc"
             app:wheelItemRotateMode="none"
             app:wheelSelectedAngle="270"
-            app:wheelCenterRadio="0.5"
+            app:wheelCenterRadio="0.35"
             app:wheelItemRadio="0.2">
 
             <LinearLayout
@@ -48,7 +48,8 @@
                     android:gravity="center"
                     android:text="GOAL"
                     android:textColor="#fff"
-                    android:textSize="25dp" />
+                    android:textSize="20dp"
+                    android:fontFamily="@font/aller"/>
 
                 <TextView
                     android:id="@+id/textView"
@@ -57,7 +58,9 @@
                     android:gravity="center"
                     android:text="2400"
                     android:textColor="#BDB76B"
-                    android:textSize="40dp" />
+                    android:textSize="35dp"
+                    android:layout_marginTop="-10dp"
+                    android:fontFamily="@font/aller"/>
             </LinearLayout>
 
 

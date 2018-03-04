@@ -2,6 +2,7 @@ package com.ryzen.ryan.carbonzero;
 
 import android.content.Intent;
 import android.provider.ContactsContract;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Hides action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        // Hides status bar
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         loginRef = firebaseDatabase.getReference();
         users = loginRef.child("users");
 
@@ -56,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
 //                id = loginText.getText().toString();
 //                users.child(id).setValue(new UserData(loginText.getText().toString()));
                 Intent intent = new Intent(LoginActivity.this, QuestionOne.class);
-                startActivity(intent);
+//                startActivity(intent);
 //                signInClicked = true;
 ////                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
 //
@@ -65,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 //                users.child(id).setValue(new UserData(loginText.getText().toString()));
 //                if(tryLogin("","")) {
 //                    Intent intent = new Intent(LoginActivity.this, EarthActivity.class);
-//                    startActivity(intent);
+                    startActivity(intent);
 //                }
             }
         });

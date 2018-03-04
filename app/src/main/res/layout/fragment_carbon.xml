@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="45dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -16,7 +17,7 @@
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="40dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
@@ -27,18 +28,18 @@
                 android:layout_weight="1"
                 android:text="CURRENT GOAL:"
                 android:textColor="#BDB76B"
-                android:textSize="25dp" />
+                android:textSize="50dp"
+                android:fontFamily="@font/antonio"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
             android:gravity="left"
             android:orientation="horizontal">
 
             <Space
-                android:layout_width="40dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
@@ -49,8 +50,10 @@
                 android:layout_weight="1"
                 android:text="3000"
                 android:textColor="#fff"
-                android:textSize="120dp"
-                android:translationY="-30dp" />
+                android:textSize="125dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/aller"
+                android:translationY="-45dp" />
         </LinearLayout>
 
         <Space

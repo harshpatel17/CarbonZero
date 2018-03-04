@@ -66,7 +66,11 @@ public class EarthActivity extends AppCompatActivity implements CursorWheelLayou
                         break;
                     case "food":
                         Toast.makeText(getBaseContext(), "Selected: "+ "food", Toast.LENGTH_SHORT).show();
-
+                        SliderFragment sliderFragment = new SliderFragment();
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        selectedFragment = sliderFragment;
+                        transaction.replace(R.id.frameLayout,selectedFragment);
+                        transaction.commit();
                         break;
                     case "carbon":
                         Toast.makeText(getBaseContext(), "Selected: "+ "travel", Toast.LENGTH_SHORT).show();

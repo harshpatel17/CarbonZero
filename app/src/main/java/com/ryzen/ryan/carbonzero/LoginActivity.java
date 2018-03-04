@@ -49,12 +49,14 @@ public class LoginActivity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                signInClicked = true;
-//                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
-
-
-                String id = loginText.getText().toString();
-                users.child(id).setValue(new UserData(loginText.getText().toString()));
+                Intent intent = new Intent(LoginActivity.this, QuestionOne.class);
+                startActivity(intent);
+//                signInClicked = true;
+////                Toast.makeText(LoginActivity.this, loginText.getText().toString(), Toast.LENGTH_SHORT).show();
+//
+//
+//                String id = loginText.getText().toString();
+//                users.child(id).setValue(new UserData(loginText.getText().toString()));
 //                if(tryLogin("","")) {
 //                    Intent intent = new Intent(LoginActivity.this, EarthActivity.class);
 //                    startActivity(intent);
@@ -71,14 +73,14 @@ public class LoginActivity extends AppCompatActivity {
         users.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if(signInClicked) {
-                    for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
-                        UserData userData = userSnapshot.getValue(UserData.class);
-
-                        if(userData.getEmailID().equals("hayho"))
-                            Toast.makeText(LoginActivity.this, "IT EXISTS!!! ", Toast.LENGTH_SHORT).show();
-                    }
-                }
+//                if(signInClicked) {
+//                    for(DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+//                        UserData userData = userSnapshot.getValue(UserData.class);
+//
+//                        if(userData.getEmailID().equals("hayho"))
+//                            Toast.makeText(LoginActivity.this, "IT EXISTS!!! ", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
             }
 
             @Override

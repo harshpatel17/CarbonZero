@@ -29,6 +29,13 @@
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
+        <activity android:name=".QuestionOne" />
+        <activity android:name=".QuestionTwo" />
+        <activity android:name=".QuestionThree" />
+        <activity android:name=".QuestionFour" />
+        <activity android:name=".QuestionFive" />
+        <activity android:name=".QuestionSix" />
+        <activity android:name=".QuestionSeven"></activity>
     </application>
 
 </manifest>
